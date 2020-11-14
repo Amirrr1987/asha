@@ -1,0 +1,377 @@
+@import "animations";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    direction: rtl;
+}
+
+body {
+    min-height: 1500px;
+}
+
+.header {
+    background-image: url('../img/bg.svg');
+    background-position: center;
+    background-size: cover;
+    height: 50vw;
+    position: relative;
+    overflow: hidden;
+
+    &__car {
+        width: 23vw;
+        display: inline-block;
+        position: absolute;
+    }
+
+    &__human {
+        width: 250px;
+        display: inline-block;
+        position: absolute;
+    }
+
+    &__light-pole {
+        width: 60vw;
+        position: absolute;
+        left: -2vw;
+        bottom: 15vw;
+        z-index: 20;
+    }
+
+    &__traffic-light {
+        height: 10vw;
+        display: inline-block;
+        position: absolute;
+    }
+
+    &--back {
+        right: 62vw;
+        top: 8vw;
+        // z-index: 20;
+
+    }
+
+    &--car-green {
+        right: -17vw;
+        top: 20vw;
+        animation: right-to-left 16s infinite linear;
+        z-index: 1;
+    }
+
+    &--car-red {
+        left: -4vw;
+        top: 20.4vw;
+        animation: old-man-walking 8s infinite linear;
+        z-index: 6;
+    }
+
+    &--car-orange {
+        z-index: 9;
+        width: 330px;
+        right: 30vw;
+        top: 33vw;
+        // animation: car-orange linear 7s infinite forwards;
+        // transform-origin: 50% 50%;
+        z-index: 45;
+    }
+
+    &--light-front {
+        right: 25vw;
+        top: 12vw;
+        width: 110px;
+        z-index: 19;
+    }
+
+    &--old-man {
+        top: 25vw;
+        width: 14vw;
+        animation: old-man-walking 32s linear infinite;
+        z-index: 21;
+    }
+
+    &--police {
+        right: 47vw;
+        top: 11.6vw;
+        z-index: 6;
+    }
+
+    &--taxi {
+        left: -10vw;
+        top: 21.7vw;
+        animation: old-man-walking 12s infinite linear;
+        z-index: 7;
+    }
+
+    &--car-van {
+        right: 2vw;
+        top: 12vw;
+        animation: right-to-left 6s infinite linear;
+    }
+}
+
+.old-man {
+
+    &__body {
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+    }
+
+    &__circle-back {
+        position: absolute;
+        width: 6.4vw;
+        top: 7.5vw;
+        right: 7vw;
+        animation: old-man-circle 8s linear infinite forwards;
+        z-index: 1;
+
+    }
+
+    &__circle-front {
+        position: absolute;
+        width: 6.4vw;
+        top: 8vw;
+        right: 7.4vw;
+        animation: old-man-circle 8s linear infinite forwards;
+        z-index: 3;
+    }
+
+    &__circle-little-back {
+        position: absolute;
+        width: 1vw;
+        top: 13vw;
+        right: 3.7vw;
+        animation: old-man-circle 2s linear infinite forwards;
+        z-index: 3;
+
+    }
+
+    &__circle-little-front {
+        position: absolute;
+        width: 1vw;
+        top: 13.3vw;
+        right: 4vw;
+        animation: old-man-circle 2s linear infinite forwards;
+        z-index: 3;
+    }
+
+    &__eyebrows {
+        position: absolute;
+        width: 1.2vw;
+        top: 1.7vw;
+        right: 4.4vw;
+        animation: old-man-eyebrows infinite ease-in-out .8s;
+        transform-origin: 0% 0%;
+        z-index: 10;
+    }
+
+    &__hand {
+        position: absolute;
+        width: 3.1vw;
+        top: 4vw;
+        right: 7.61vw;
+        animation: old-man-hand 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+        z-index: 4;
+    }
+}
+
+.police {
+    &__body {
+        width: 6vw;
+        z-index: 19;
+        position: absolute;
+    }
+
+    &__hand {
+        position: absolute;
+        top: 7vw;
+        right: -3vw;
+        width: 4vw;
+        z-index: 0;
+        animation: old-man-hand 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+        transform-origin: left !important;
+    }
+}
+
+.traffic-light-back {
+    &__body {
+        height: 18.7vw;
+    }
+
+
+    &__green {
+        position: absolute;
+        width: 1.5vw;
+        top: .6vw;
+        left: 1.5vw;
+        // animation: lights 5s 0s infinite linear;
+        // opacity: 0;
+    }
+
+    &__yellow {
+        position: absolute;
+        width: 1.5vw;
+        top: 2.5vw;
+        left: 1.5vw;
+        // animation: lights 5s 10s infinite linear;
+        // opacity: 0;
+    }
+
+    &__red {
+        position: absolute;
+        width: 1.4vw;
+        top: 4.3vw;
+        left: 1.6vw;
+        // animation: lights 5s 20s infinite linear;
+        // opacity: 0;
+    }
+}
+
+.traffic-light-front {
+    &__body {
+        height: 23vw;
+
+    }
+
+    &__green {
+        position: absolute;
+        width: 1.77vw;
+        top: .7vw;
+        right: 1.799vw;
+        // animation: lights 5s infinite linear;
+        // opacity: 0;
+    }
+
+    &__yellow {
+        position: absolute;
+        width: 1.8vw;
+        top: 3vw;
+        right: 1.65vw;
+        // animation: lights 5s 20s infinite linear;
+        // opacity: 0;
+    }
+
+    &__red {
+        position: absolute;
+        width: 1.65vw;
+        top: 5.2vw;
+        right: 1.8vw;
+        // opacity: 0;
+        // animation: lights 5s 30s infinite linear;
+    }
+}
+
+@keyframes old-man-walking {
+    0% {
+        left: -300px;
+    }
+
+    30% {
+        left: 16vw;
+    }
+
+    40% {
+        left: 16vw;
+    }
+
+    100% {
+        left: 100vw;
+    }
+}
+
+
+@keyframes right-to-left {
+    0% {
+        right: -300px;
+    }
+
+    100% {
+        right: 100vw;
+    }
+}
+
+
+@keyframes old-man-circle {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(460deg);
+    }
+}
+
+
+
+@keyframes old-man-hand {
+    0% {
+        transform: rotate(10deg);
+        transform-origin: right;
+    }
+    100% {
+        transform: rotate(-10deg);
+        transform-origin: right;
+    }
+}
+
+@keyframes old-man-eyebrows {
+    0% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(10deg);
+    }
+
+}
+
+
+@keyframes car-orange {
+    0% {
+        // transform: translate(0px, 200px) scaleX(1.00) scaleY(1.00);
+        opacity: 1;
+    }
+
+    10% {
+        // transform: translate(0px, 200px) scaleX(1.00) scaleY(1.00);
+    }
+
+    73% {
+        opacity: 1;
+    }
+
+    74% {
+        opacity: 0;
+    }
+
+
+    100% {
+        // transform: translate(-400px, -200px) scaleX(0.00) scaleY(0.00);
+        opacity: 0;
+    }
+}
+
+
+@keyframes lights {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+
+    }
+
+    100% {
+        opacity: 0;
+
+    }
+}
